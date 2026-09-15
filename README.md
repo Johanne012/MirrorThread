@@ -1,6 +1,6 @@
 # MirrorThread
 
-**AI Temporal Narrative Weaver** — Multi-agent system that discovers long-term personal patterns from journal entries.
+**AI Temporal Narrative Weaver** with a forward-looking vision toward **Technology · Development · Energy**.
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -8,96 +8,38 @@
 
 ---
 
-## What makes it unique?
+## Core Idea
 
-Most AI systems react to the **present moment**.  
-**MirrorThread** treats **time** as a first-class citizen.
+Most AI systems react to the present moment.  
+**MirrorThread** treats **time** as a first-class citizen and projects personal patterns into a larger future of technology, software development, and energy transition.
 
-You write journal entries (even months or years apart). The system:
+You write journal entries. The system:
 
-1. Discovers **temporal threads** — recurring themes across time
+1. Discovers **temporal threads** (work, health, growth, tech, energy…)
 2. Detects whether each thread is **rising / falling / stable**
-3. Links emotions to themes (Emotion ↔ Theme correlations)
+3. Links emotions to themes
 4. Builds automatic **life chapters**
-5. Generates messages from your **future self** + practical continuity points
-6. Optionally enriches everything with a real LLM
+5. Generates messages from your **future self**
+6. Adds a **VisionTech** layer that connects your personal patterns to the worlds of **AI, software development, and clean energy**
 
-This is not a chatbot. It is personal temporal archaeology powered by agents.
+This is personal temporal archaeology aimed at builders of the next decade.
 
 ---
 
 ## Two Editions
 
-### 1. Classic (stdlib only)
-Zero external dependencies. Fast local multi-agent engine + beautiful dark RTL web UI.
-
+### Classic (stdlib only)
 ```bash
 python3 server.py
 # → http://localhost:8765
 ```
 
-### 2. LangGraph Edition (recommended for production)
-Full LangGraph graph with:
-- Typed shared state
-- Conditional edges
-- Checkpointing (MemorySaver → ready for Postgres)
-- Clear node separation (Theme → Emotion → Narrative → FutureSelf)
+### LangGraph Edition (recommended)
+Full production-oriented graph:
 
-```bash
-cd langgraph_version
-python3 demo.py
 ```
-
----
-
-## Multi-Agent Architecture
-
-| Agent / Node | Responsibility |
-|--------------|----------------|
-| **ThemeAgent** | Temporal threads + trend detection (rising/falling/stable) |
-| **EmotionAgent** | Emotional patterns + Emotion↔Theme links |
-| **NarrativeAgent** | Automatic life-chapter construction |
-| **FutureSelfAgent** | Future-self messages + continuity advice |
-| **Orchestrator / Graph** | Coordinates the agents (classic) or LangGraph runtime |
-
----
-
-## Features
-
-- **Real LLM linking** — OpenAI-compatible (OpenAI, Groq, Together, Ollama…)
-- **Improved pattern detection** — trends + intensity + correlations
-- **Automation** — auto-analyze when enough new entries exist
-- **Export** — clean Markdown report + JSON
-- **LangGraph ready** — durable execution, checkpointing, human-in-the-loop path
-- **Zero external dependencies** for the classic engine
-- Beautiful dark RTL-ready web UI
-
----
-
-## Quick Start (Classic)
-
-```bash
-git clone https://github.com/Johanne012/MirrorThread.git
-cd MirrorThread
-python3 server.py
+START → theme → emotion → narrative → future_self → vision_tech → finalize → END
 ```
-
-Open → [http://localhost:8765](http://localhost:8765)
-
-### Enable Real LLM (optional)
-
-Edit `config.py`:
-
-```python
-LLM_API_KEY = "sk-..."
-LLM_BASE_URL = "https://api.openai.com/v1"
-LLM_MODEL = "gpt-4o-mini"
-USE_REAL_LLM = True
-```
-
----
-
-## LangGraph Edition
 
 ```bash
 pip install langgraph
@@ -105,13 +47,46 @@ cd langgraph_version
 python3 demo.py
 ```
 
-The graph flow:
+---
 
-```
-START → theme → (conditional) → emotion → narrative → future_self → finalize → END
-```
+## Vision Layer (Tech · Development · Energy)
 
-Checkpointing is enabled by default (`MemorySaver`). Swap to `PostgresSaver` for production durability.
+The new `vision_tech_node` reads your dominant threads and emotions and produces forward-looking messages such as:
+
+- How your recurring themes intersect with AI and the energy transition
+- How curiosity or anxiety can become fuel for responsible building
+- Practical continuity points that link personal life to systemic challenges
+
+Themes now include: **تقنية · تطوير · طاقة · مستقبل** in addition to the classic personal themes.
+
+---
+
+## Architecture
+
+| Node / Agent | Role |
+|--------------|------|
+| ThemeAgent | Temporal threads + trend detection |
+| EmotionAgent | Emotional patterns + Emotion↔Theme links |
+| NarrativeAgent | Life chapters |
+| FutureSelfAgent | Personal future-self messages |
+| **VisionTechAgent** | Links personal patterns to technology, development & energy futures |
+| Orchestrator / Graph | LangGraph runtime with checkpointing |
+
+---
+
+## Quick Start
+
+```bash
+git clone https://github.com/Johanne012/MirrorThread.git
+cd MirrorThread
+
+# Classic UI
+python3 server.py
+
+# LangGraph vision demo
+cd langgraph_version
+python3 demo.py
+```
 
 ---
 
@@ -119,31 +94,24 @@ Checkpointing is enabled by default (`MemorySaver`). Swap to `PostgresSaver` for
 
 ```
 MirrorThread/
-├── server.py                 # Classic HTTP server + web UI
-├── agents.py                 # Classic multi-agent engine
-├── llm_connector.py          # Real LLM integration
-├── export.py                 # Markdown + JSON export
-├── config.py                 # Configuration
-├── langgraph_version/        # ★ Production-oriented LangGraph edition
+├── server.py / agents.py / ...     # Classic edition
+├── langgraph_version/
 │   ├── state.py
-│   ├── nodes.py
+│   ├── nodes.py          # includes VisionTech
 │   ├── graph.py
-│   ├── demo.py
-│   └── __init__.py
-├── data/                     # Journal storage (auto-created)
-└── exports/                  # Generated reports
+│   └── demo.py           # Tech + Energy oriented sample
+└── README.md
 ```
 
 ---
 
-## Arabic Summary / ملخص عربي
+## Arabic Summary
 
-**MirrorThread** نظام وكلاء متعدد يكتشف الخيوط الزمنية في مذكراتك الشخصية، يبني فصول حياة، ويرسل لك رسائل من "ذاتك المستقبلية".
+**MirrorThread** يكتشف الخيوط الزمنية في مذكراتك ويربطها برؤية مستقبلية في **التقنية والتطوير والطاقة**.
 
-- إصدار كلاسيكي (بدون مكتبات خارجية) + واجهة ويب
-- إصدار **LangGraph** للإنتاج (checkpointing + توجيه شرطي + حالة مشتركة)
-- ربط حقيقي بأي LLM متوافق مع OpenAI API
-- أتمتة + تصدير Markdown/JSON
+- إصدار كلاسيكي + واجهة ويب
+- إصدار LangGraph مع عقدة **VisionTech**
+- رسائل من الذات المستقبلية + إسقاطات على عالم الذكاء الاصطناعي والانتقال الطاقي
 
 ---
 
